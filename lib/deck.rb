@@ -4,16 +4,32 @@
 require_relative 'card'
 
 class Deck
+  attr_reader :cards
 
   def initialize
-
-  end
-
-  def draw
-    # returns a card
+    @cards = []
+    suits = [:clubs, :diamonds, :hearts, :spades]
+    suits.each do |asuit|
+      (1..13).each do |value|
+        @cards.push(Card.new(value, asuit))
+      end
+    end
   end
 
   def shuffle
     # shuffles the deck
+    @cards.shuffle!
+  end
+
+  def draw
+    # returns a card
+    str = @cards.first.to_s
+    @cards.pop
+    str
+  end
+
+  def count
+    # returns the number of cards left in the deck
+    return @cards.length
   end
 end

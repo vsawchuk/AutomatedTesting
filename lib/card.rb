@@ -14,12 +14,24 @@ class Card
 
     @value = value
     @suit = suit
+    case @value
+      when 1
+        @face = "Ace"
+      when 2, 3, 4, 5, 6, 7, 8, 9, 10
+        @face = @value.to_s
+      when 11
+        @face = "Jack"
+      when 12
+        @face = "Queen"
+      when 13
+        @face = "King"
+    end
 
 
   end
 
   def to_s
-    return "#{value} of #{suit.to_s}"
+    return "#{@face} of #{@suit.to_s}"
   end
 
 end

@@ -20,7 +20,9 @@ describe Deck do
     @deck.must_respond_to :shuffle
   end
   it "Can draw a card" do
+    original_count = @deck.count
     @deck.draw.class.must_equal String
+    original_count.must_equal (@deck.count + 1)
   end
   it "Can count the cards in the deck" do
     @deck.count.must_be :<, 53

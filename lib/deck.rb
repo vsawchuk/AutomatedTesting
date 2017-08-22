@@ -23,9 +23,9 @@ class Deck
 
   def draw
     # returns a card
-    str = @cards.first.to_s
+    str = @cards.last.to_s
     @cards.pop
-    str
+    return str
   end
 
   def count

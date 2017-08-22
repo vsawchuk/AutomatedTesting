@@ -1,4 +1,3 @@
-
 # card.rb
 
 class Card

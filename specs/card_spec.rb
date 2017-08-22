@@ -52,14 +52,24 @@ describe Card do
   end
 
   describe "Reader methods" do
+    before do
+      @suits = [:clubs, :diamonds, :hearts, :spades]
+      @value = (1..13).to_a.sample
+      @suit = @suits.sample
+    end
 
     it "Can retrieve the value of the card using a `.value`." do
       # ensure that `.value works as expected`
+      card = Card.new(@value, @suit)
+      (1..13).to_a.include?(card.value)
+      card.value.class.must_equal Integer
     end
 
     it "Can retrieve the value of the card using a `.suit`." do
       # ensure that `.suit works as expected returning the symbol of the suit`
-
+      card = Card.new(@value, @suit)
+      @suits.include?(card.suit)
+      card.suit.class.must_equal Symbol
     end
   end
 

@@ -23,10 +23,7 @@ class Deck
   end
 
   def draw
-    # returns a card
-    str = @cards.last.to_s
-    @cards.pop
-    return str
+    return @cards.pop.to_s
   end
 
   def count

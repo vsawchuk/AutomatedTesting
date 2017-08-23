@@ -1,6 +1,3 @@
-
-# deck.rb
-
 require_relative 'card'
 
 class Deck
@@ -18,7 +15,6 @@ class Deck
   end
 
   def shuffle
-    # shuffles the deck
     @cards.shuffle!
   end
 
@@ -27,7 +23,6 @@ class Deck
   end
 
   def count
-    # returns the number of cards left in the deck
     return @cards.length
   end
 end

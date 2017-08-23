@@ -14,6 +14,7 @@ class Deck
         @cards.push(Card.new(value, asuit))
       end
     end
+    @cards.shuffle
   end
 
   def shuffle
